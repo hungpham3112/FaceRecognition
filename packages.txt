@@ -1,0 +1,3 @@
+libgl1
+cmake
+libssl-dev
