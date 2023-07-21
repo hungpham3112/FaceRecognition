@@ -37,7 +37,7 @@ def main():
                 return
             train_images.append(cropped_face)
 
-        mean_face, eigenvectors = eigenfaces(train_images, k)
+        mean_face, eigenvectors = eigenfaces(train_images)
 
         with col2:
             uploaded_file = st.file_uploader(
@@ -55,8 +55,8 @@ def main():
                 recognized_label = recognize(
                     cropped_face, train_images, mean_face, eigenvectors, labels
                 )
-                st.image(img, channels="BGR", use_column_width=True)
                 st.text(f"This is a face of {recognized_label}.")
+                st.image(img, channels="BGR", use_column_width=True)
 
 
 if __name__ == "__main__":
